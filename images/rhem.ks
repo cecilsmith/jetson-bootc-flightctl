@@ -32,11 +32,6 @@ ostreecontainer --transport oci --url /run/install/repo/container
 
 %post --log=/dev/console --erroronfail
 
-# Append custom entries to /etc/hosts file
-cat <<EOF >> /etc/hosts
-FlightCtl_SERVER_IP  FlightCtl_SERVER_HOSTNAME
-EOF
-
 # Replicate the video group in local groupfile
 grep -E '^video' /usr/lib/group >> /etc/group
 
